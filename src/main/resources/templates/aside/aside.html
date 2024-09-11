@@ -1,0 +1,50 @@
+
+        <aside class="aside" layout:fragment="aside" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+            <div  class="sidebar" th:if="${group == 'community'}">
+                <div class="aside_cate">
+                    <img th:src="@{/images/sub_aside_cate5_tit.png}" alt="커뮤니티">
+                </div><!-- .aside_cate -->
+                <div class="aside_bg">
+                    <ul class="cate_lnb">
+                        <li><a th:href="@{article/list}">공지사항</a></li>
+                        <li><a th:href="@{article/list}">오늘의식단</a></li>
+                        <li><a th:href="@{article/list}">나도요리사</a></li>
+                        <li><a th:href="@{article/list}">1:1고객문의</a></li>
+                        <li><a th:href="@{article/list}">자주묻는질문</a></li>
+                    </ul><!-- .cate_lnb -->
+                </div><!-- .aside_bg -->
+            </div><!-- .sidebar -->
+
+            <div class="sidebar" th:if="${group == 'croptalk'}">
+                <div class="aside_cate">
+                    <img th:src="@{/images/sub_aside_cate3_tit.png}" alt="Croptalk 농작물이야기">
+                </div><!-- .aside_cate -->
+                <div class="aside_bg">
+                    <ul class="cate_lnb1">
+                        <li><a th:href="@{article/list}" class="lnb1">농작물이야기</a></li>
+                        <li><a th:href="@{article/list}" class="lnb2">텃밭가꾸기</a></li>
+                        <li><a th:href="@{article/list}" class="lnb3">귀농학교</a></li>
+                    </ul><!-- .cate_lnb -->
+                </div><!-- .aside_bg -->
+            </div><!-- .sidebar -->
+
+            <aside class="aside" th:if="${group == 'event'}">
+                <div class="sidebar">
+                    <div class="aside_cate">
+                        <img th:src="@{/images/sub_aside_cate4_tit.png}" alt="event">
+                    </div><!-- .aside_cate -->
+                    <div class="aside_bg">
+                        <ul class="cate_lnb1">
+                            <li><a th:href="@{article/list}" class="lnb1">이벤트</a></li>
+                        </ul><!-- .cate_lnb -->
+                    </div><!-- .aside_bg -->
+                </div><!-- .sidebar -->
+            </aside><!-- .aside -->
+
+
+
+
+
+
+        </aside><!-- .aside -->
+

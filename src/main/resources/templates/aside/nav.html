@@ -1,0 +1,58 @@
+
+        <nav layout:fragment="nav" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+            <div th:if="${group=='community'}">
+                <h2>
+                    <!-- community={notice,today,cook,cs,faq}-->
+                    <img th:if="${cate=='notice'}" th:src="@{/images/sub_nav_tit_cate5_tit1.png}" alt="공지사항">
+                     <img th:if="${cate=='today'}" th:src="@{/images/sub_nav_tit_cate5_tit2.png}" alt="오늘의식단">
+                     <img th:if="${cate=='cook'}" th:src="@{/images/sub_nav_tit_cate5_tit3.png}" alt="나도요리사">
+                     <img th:if="${cate=='cs'}" th:src="@{/images/sub_nav_tit_cate5_tit4.png}" alt="1:1고객문의">
+                     <img th:if="${cate=='faq'}" th:src="@{/images/sub_nav_tit_cate5_tit5.png}" alt="자주묻는질문">
+                </h2>
+                <p class="location">
+                    <img th:src="@{/images/sub_page_nav_ico.gif}" alt="메뉴">
+                    <span>HOME </span>
+                    <span>커뮤니티 </span>
+                    <strong th:if="${cate=='notice'}">공지사항</strong>
+                    <strong th:if="${cate=='today'}">오늘의식단</strong>
+                    <strong th:if="${cate=='cook'}">나도요리사</strong>
+                    <strong th:if="${cate=='cs'}">1:1고객문의</strong>
+                    <strong th:if="${cate=='faq'}">자주묻는질문</strong>
+                </p>
+            </div>
+
+            <div th:if="${group=='croptalk'}">
+
+                <nav>
+                    <h2>
+                        <img th:src="@{/images/sub_nav_tit_cate3_tit1.png}" alt="농작물이야기">
+                        <img th:src="@{/images/sub_nav_tit_cate3_tit2.png}" alt="텃밭가꾸기">
+                        <img th:src="@{/images/sub_nav_tit_cate3_tit3.png}" alt="귀농학교">
+                    </h2>
+                    <p class="location">
+                        <img th:src="@{/images/sub_page_nav_ico.gif}" alt="메뉴">
+                        <span>HOME </span>
+                        <span>농작물이야기 </span>
+                        <strong th:if="${cate == 'story'}">농작물이야기</strong>
+                        <strong th:if="${cate == 'garden'}">텃밭가꾸기</strong>
+                        <strong th:if="${cate == 'return'}">귀농학교</strong>
+                    </p><!-- location end -->
+                </nav>
+            </div>
+            <div th:if="${group=='event'}">
+                <nav>
+                    <h2>
+                        <img th:src="@{/images/sub_nav_tit_cate4_tit1.png}" alt="이벤트">
+                    </h2>
+                    <p class="location">
+                        <img th:src="@{/images/sub_page_nav_ico.gif}" alt="메뉴">
+                        <span>HOME</span>
+                        <span>이벤트</span>
+                        <strong>이벤트</strong>
+                    </p>
+                </nav>
+            </div>
+
+
+        </nav>
+

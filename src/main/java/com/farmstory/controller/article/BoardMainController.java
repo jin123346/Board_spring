@@ -5,6 +5,8 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 
 @Log4j2
 @RequiredArgsConstructor
@@ -13,9 +15,26 @@ public class BoardMainController {
 
     private ArticleServicce articleServicce;
 
-    @GetMa
-    public String list(){return "/article/list";}
-    public String write(){return "/article/write";}
+    @GetMapping("/article/list")
+    public String list(Model model){
+        String group = "community";
+        String cate = "croptalk";
+        String content="list";
+        model.addAttribute("group", group);
+        model.addAttribute("cate", cate);
+        model.addAttribute("content",content);
+        return "/boardIndex";}
+
+    @GetMapping("/article/write")
+    public String write(Model model){
+        String group = "community";
+        String cate = "notice";
+        String content="write";
+        model.addAttribute("group", group);
+        model.addAttribute("cate", cate);
+        model.addAttribute("content",content);
+        return "/boardIndex";}
+
     public String modify(){return "/article/modify";}
     public String delete(){return "/article/delete";}
 

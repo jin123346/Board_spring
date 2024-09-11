@@ -45,11 +45,11 @@
     text-indent: -9999px; display: block; width: 176px; height: 29px; }
 
 /* lnb a 마우스오버시 공통값 */
-.cate_lnb li:nth-child(1) a:hover{top:107px; background-image: url('../images/sub_cate5_lnb1_ov.png'); }
-.cate_lnb li:nth-child(2) a:hover{top:136px; background-image: url('../images/sub_cate5_lnb2_ov.png'); }
-.cate_lnb li:nth-child(3) a:hover{top:165px; background-image: url('../images/sub_cate5_lnb3_ov.png'); }
-.cate_lnb li:nth-child(4) a:hover{top:194px; background-image: url('../images/sub_cate5_lnb4_ov.png'); }
-.cate_lnb li:nth-child(5) a:hover{top:223px; background-image: url('../images/sub_cate5_lnb5_ov.png'); }
+.cate_lnb li:nth-child(1) a:hover{top:107px;  opacity: 50%; background-image: url('../images/sub_cate5_lnb1_ov.png'); }
+.cate_lnb li:nth-child(2) a:hover{top:136px;  opacity: 50%; background-image: url('../images/sub_cate5_lnb2_ov.png'); }
+.cate_lnb li:nth-child(3) a:hover{top:165px;  opacity: 50%; background-image: url('../images/sub_cate5_lnb3_ov.png'); }
+.cate_lnb li:nth-child(4) a:hover{top:194px;  opacity: 50%; background-image: url('../images/sub_cate5_lnb4_ov.png'); }
+.cate_lnb li:nth-child(5) a:hover{top:223px;  opacity: 50%; background-image: url('../images/sub_cate5_lnb5_ov.png'); }
 
 
 /* article 영역 (오른쪽)  ---------------------------------------------- */

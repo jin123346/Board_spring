@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <th:block layout:fragment="css">
+    <!-- 페이지별 CSS 한곳에 -->
+    <link rel="stylesheet" th:href="@{/css/common.css}">
+    <link rel="stylesheet" th:href="@{/css/reset.css}">
+    <link rel="stylesheet" th:href="@{/css/community.css}">
+    <link rel="stylesheet" th:href="@{/css/croptalk.css}">
+    <link rel="stylesheet" th:href="@{/css/reset.css}">
+  </th:block>
+  <th:block layout:fragment="script"></th:block>
+</head>
+<body>
+<div class="wrapper">
+  <div th:replace="include/_header :: header"></div>
+  <main id="main cf">
+   <section class="mainIn cf">
+     <div th:replace="aside/subbg.html"></div>
+     <div th:replace="aside/aside.html"></div>
+
+     <article class="article"><!-- .article start-->
+       <div class="articleIn">
+         <div th:replace="aside/nav"></div>
+         <div th:text="${content}"></div>
+
+
+         <div th:if="${content == 'list'}" >
+           <div th:replace="contents/board_content/list.html"></div>
+         </div>
+         <div th:if="${content == 'view'}" >
+           <div th:replace="contents/board_content/view.html"></div>
+         </div>
+
+         <div th:if="${content == 'write'}" >
+           <div th:replace="contents/board_content/write.html"></div>
+         </div>
+         <div th:if="${content == 'modify'}" >
+           <div th:replace="contents/board_content/modify.html"></div>
+         </div>
+
+         <!--         <div th:switch="${content}">-->
+<!--           <div th:case="list" th:replace="contents/board_content/list.html"></div>-->
+<!--           <div th:case="view" th:replace="contents/board_content/view.html"></div>-->
+<!--           <div th:case="write" th:replace="contents/board_content/write.html"></div>-->
+<!--           <div th:case="modify" th:replace="contents/board_content/modify.html"></div>-->
+<!--         </div>-->
+       </div><!--.articleIn-->
+     </article><!--.article-->
+
+   </section> <!--.mainIn-->
+  </main>
+
+  <footer th:replace="~{include/_footer :: footer}"></footer></div>
+</body>
+</html>
