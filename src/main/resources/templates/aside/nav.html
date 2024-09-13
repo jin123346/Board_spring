@@ -1,5 +1,4 @@
 
-        <nav layout:fragment="nav" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
             <div th:if="${group=='community'}">
                 <h2>
                     <!-- community={notice,today,cook,cs,faq}-->
@@ -25,17 +24,17 @@
 
                 <nav>
                     <h2>
-                        <img th:src="@{/images/sub_nav_tit_cate3_tit1.png}" alt="농작물이야기">
-                        <img th:src="@{/images/sub_nav_tit_cate3_tit2.png}" alt="텃밭가꾸기">
-                        <img th:src="@{/images/sub_nav_tit_cate3_tit3.png}" alt="귀농학교">
+                        <img th:if="${cate=='story'}" th:src="@{/images/sub_nav_tit_cate3_tit1.png}" alt="농작물이야기">
+                        <img th:if="${cate=='grow'}" th:src="@{/images/sub_nav_tit_cate3_tit2.png}" alt="텃밭가꾸기">
+                        <img th:if="${cate=='school'}" th:src="@{/images/sub_nav_tit_cate3_tit3.png}" alt="귀농학교">
                     </h2>
                     <p class="location">
                         <img th:src="@{/images/sub_page_nav_ico.gif}" alt="메뉴">
                         <span>HOME </span>
                         <span>농작물이야기 </span>
                         <strong th:if="${cate == 'story'}">농작물이야기</strong>
-                        <strong th:if="${cate == 'garden'}">텃밭가꾸기</strong>
-                        <strong th:if="${cate == 'return'}">귀농학교</strong>
+                        <strong th:if="${cate == 'grow'}">텃밭가꾸기</strong>
+                        <strong th:if="${cate == 'school'}">귀농학교</strong>
                     </p><!-- location end -->
                 </nav>
             </div>
@@ -52,6 +51,55 @@
                     </p>
                 </nav>
             </div>
+            <div th:if="${group=='introduction'}">
+                <nav>
+                    <h2>
+                        <img th:if="${cate=='intro'}" th:src="@{/images/sub_nav_tit_cate1_tit1.png}" alt="인사말">
+                        <img th:if="${cate=='direct'}" th:src="@{/images/sub_nav_tit_cate1_tit2.png}" alt="찾아오시는길">
+                    </h2>
+                    <p class="location">
+                        <img  th:src="@{/images/sub_page_nav_ico.gif}" alt="메뉴">
+                        <span>HOME </span>
+                        <span>팜스토리소개 </span>
+                        <strong th:if="${cate=='intro'}">인사말</strong>
+                        <strong th:if="${cate=='direct'}">찾아오시는길</strong>
+                    </p>
+                </nav>
+            </div>
+
+            <div th:if="${group=='market'}" >
+                <nav>
+                    <h2>
+                        <img th:src="@{/images/sub_nav_tit_cate2_tit1.png}" alt="장보기">
+                    </h2>
+                    <p class="location">
+                        <img th:src="@{/images/sub_page_nav_ico.gif}" alt="메뉴">
+                        <span>HOME </span>
+                        <span>장보기 </span>
+                        <strong>장보기</strong>
+                    </p>
+                </nav>
+            </div>
+
+            <div th:if="${group=='myinfo'}">
+
+                <nav>
+                    <h2>
+                        <img th:if="${cate=='cart'}" th:src="@{/images/myinfo/myinfo_nav_tit1.png}" alt="장바구니">
+                        <img th:if="${cate=='orderitem'}" th:src="@{/images/myinfo/myinfo_nav_tit2.png}" alt="주문내역">
+                        <img th:if="${cate=='myinfo'}" th:src="@{/images/myinfo/myinfo_nav_tit3.png}" alt="정보수정">
+                    </h2>
+                    <p class="location">
+                        <img th:src="@{/images/sub_page_nav_ico.gif}" alt="메뉴">
+                        <span>HOME </span>
+                        <span>나의정보 </span>
+                        <strong th:if="${cate == 'cart'}">장바구니</strong>
+                        <strong th:if="${cate == 'orderitem'}">주문내역</strong>
+                        <strong th:if="${cate == 'myinfo'}">정보수정</strong>
+                    </p><!-- location end -->
+                </nav>
+            </div>
+
 
 
         </nav>
