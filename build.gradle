@@ -27,6 +27,9 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity6'
+	testImplementation 'org.springframework.security:spring-security-test'
 	compileOnly 'org.projectlombok:lombok'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
@@ -37,8 +40,39 @@ dependencies {
 
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'         // Thymeleaf Template
 	implementation 'nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect'
+
+
+	implementation group: 'com.google.apis', name: 'google-api-services-calendar', version: 'v3-rev411-1.25.0'
+// https://mvnrepository.com/artifact/com.google.auth/google-auth-library-oauth2-http
+	implementation group: 'com.google.auth', name: 'google-auth-library-oauth2-http', version: '1.25.0'
+	// https://mvnrepository.com/artifact/com.google.api-client/google-api-client
+	implementation group: 'com.google.api-client', name: 'google-api-client', version: '2.7.0'
+	// https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind
+	implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.17.2'
+// https://mvnrepository.com/artifact/com.google.http-client/google-http-client-jackson2
+	implementation group: 'com.google.http-client', name: 'google-http-client-jackson2', version: '1.45.0'
+
+
 }
 
 tasks.named('test') {
 	useJUnitPlatform()
+}
+
+tasks.withType(JavaCompile).configureEach {
+	options.compilerArgs << "-parameters"
+}
+// QueryDSL 경로설정
+def queryDslDir = "src/main/generated"
+
+sourceSets {
+	main.java.srcDirs queryDslDir
+}
+
+tasks.withType(JavaCompile) {
+	options.generatedSourceOutputDirectory = file(queryDslDir)
+}
+
+clean {
+	delete file(queryDslDir)
 }

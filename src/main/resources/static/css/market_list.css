@@ -79,7 +79,11 @@
 .product_table tr:nth-of-type(5) {
     width: 762px;
     height: 105px;
+}
+
+.product_table tr:last-child{
     border-bottom: 1px solid #111111;
+
 }
 
 
@@ -94,7 +98,7 @@
     background-color: #E5ECEF;
 }
 
-.pic > img{
+.pic img{
     width: 80px;
     height: 80px;
     margin-top: 10.5px;

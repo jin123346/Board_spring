@@ -1,10 +1,13 @@
 package com.farmstory.entity;
 
 import com.farmstory.dto.CateDTO;
+import jakarta.persistence.Cacheable;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.*;
+import org.hibernate.annotations.Cache;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 @Getter
 @ToString
@@ -13,6 +16,8 @@ import lombok.*;
 @Builder
 @Entity
 @Table(name="Cate")
+@Cacheable
+@Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
 public class Cate {
 
     @Id

@@ -1,8 +1,9 @@
+<link rel="stylesheet" th:href="@{/css/board.css}">
 
 <section class="write" >
                 	<h3>글쓰기</h3>
                 	<article>
-                        <form action="#" method="post" enctype="multipart/form-data">
+                        <form th:action="@{article/writer}" method="post" enctype="multipart/form-data">
                             <input type="hidden" name="b_writer" value="">
                             <table>
                                 <tr>
@@ -29,7 +30,7 @@
                                 </tr>
                             </table>
                             <div>
-                                <a href="#" class="btnCancel">취소</a>
+                                <a th:href="@{'/category/' + ${cate.cateGroup} + '/' + ${cate.cateName}(content='list')}" class="btnCancel">취소</a>
                                 <input type="submit"  class="btnWrite" value="작성완료">
                             </div>
                         </form>
